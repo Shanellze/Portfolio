@@ -1,11 +1,31 @@
+/* ==========================================================================
+  BASE
+========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ==========================================================================
+  FONTS
+========================================================================== */
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('PlayfairDisplayExtrabold-1GDw2.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+  GLOBAL STYLES
+========================================================================== */
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #ffffff;
   background-color: #ff85a9;
@@ -13,15 +33,47 @@ body {
 
 header {
   color: #fff;
-  padding: 1rem 0;
+  padding: 16px 0;
   text-align: center;
 }
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+  margin-top: 32px;
+}
+
+h1, h2 {
+  font-size: 72px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+  NAVIGATION
+========================================================================== */
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 20px;
   padding: 0;
   margin: 0;
 }
@@ -30,30 +82,324 @@ nav a {
   display: inline-block;
 }
 
-main {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+
+/* ==========================================================================
+  CONTACT SECTION
+========================================================================== */
+
+/* --------------------------------------------------------------------------
+    Layout
+-------------------------------------------------------------------------- */
+
+.contact-shell {
+  width: min(1120px, 95%);
+  margin: 0 auto;
 }
 
-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 2rem 1rem;
+.contact-grid {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 24px;
 }
 
-footer {
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+.contact-left {
+  display: grid;
+  gap: 16px;
 }
 
-a {
+.row.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* --------------------------------------------------------------------------
+    Cards
+-------------------------------------------------------------------------- */
+
+.contact-card {
+  border: 1px solid #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(3px);
+}
+
+
+/* --------------------------------------------------------------------------
+    Information Card
+-------------------------------------------------------------------------- */
+
+.info-card {
+  display: grid;
+  gap: 18px;
+  padding: 21px 19px;
+  border-radius: 24px;
+  box-shadow: 0 18px 36px rgba(255,255,255,.16);
+}
+
+.info-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 13px;
+  align-items: start;
+}
+
+.info-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
   color: #ffffff;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.info-copy {
+  min-width: 0;
+}
+
+.info-label {
+  margin-bottom: 3px;
+  color: #ffffff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.info-value {
+  color: #ffffff;
+  font-size: clamp(15px, 14px + 0.45vw, 23px);
+  font-weight: 700;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.info-value a:hover {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+
+/* --------------------------------------------------------------------------
+    Connect Card
+-------------------------------------------------------------------------- */
+
+.connect-card {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
 }
+
+.connect-card h3 {
+  letter-spacing: 1px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.connect-item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 18px;
+  border-radius: 22px;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.12);
+}
+
+.connect-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.linkedin-icon {
+  fill: #ffffff;
+  stroke: none;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+.github-icon {
+  fill: #ffffff;
+  stroke: none;
+}
+
+.connect-copy {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.connect-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.connect-url {
+  font-size: 16px;
+  line-height: 1.2;
+  opacity: 0.95;
+  word-break: break-word;
+}
+
+.connect-arrow {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* --------------------------------------------------------------------------
+    Contact Form
+-------------------------------------------------------------------------- */
+
+.contact-form {
+  display: grid;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 7px;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 12px 14px;
+  font: inherit;
+  
+  background-color: transparent;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ffffff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+.contact-form button {
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 13px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+/* ==========================================================================
+  RESPONSIVE
+========================================================================== */
+
+@media (max-width: 940px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #contact {
+    padding: 48px 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .row.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 17px;
+  }
+
+  .info-card {
+    padding: 22px 18px;
+    gap: 19px;
+  }
+
+  .info-item {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .info-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .info-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .connect-card {
+    padding: 18px;
+  }
+
+  .connect-card h3 {
+    font-size: 25px;
+  }
+
+  .connect-item {
+    grid-template-columns: 36px minmax(0, 1fr) 20px;
+    gap: 13px;
+    padding: 16px 15px;
+    border-radius: 18px;
+  }
+
+  .connect-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .connect-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .connect-title {
+    font-size: 16px;
+  }
+
+  .connect-url {
+    font-size: 14px;
+  }
+}
+
