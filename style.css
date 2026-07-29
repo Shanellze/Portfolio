@@ -164,6 +164,151 @@ nav a {
 
 
 /* ==========================================================================
+  PROJECTS SECTION
+========================================================================== */
+
+#projects {
+  width: min(1240px, 95%);
+  min-height: auto;
+  margin: 0 auto;
+}
+
+.project-timeline {
+  margin-top: 30px;
+  display: grid;
+  gap: 24px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.project-index {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.9;
+  padding-top: 16px;
+}
+
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 22px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.11);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 36px rgba(255, 255, 255, 0.16);
+}
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.project-head h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 21px + 0.5vw, 32px);
+  line-height: 1.15;
+}
+
+.project-subtitle {
+  margin-top: 2px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.project-date {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.11);
+  padding: 6px 14px;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.project-points {
+  margin: 16px 0 0 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.project-points li {
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.project-meta {
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tags li {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.09);
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.project-btn {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-btn:hover {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(255, 255, 255, 0.12);
+}
+
+.project-btn.live {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+}
+
+
+/* ==========================================================================
   EDUCATION SECTION
 ========================================================================== */
 
@@ -505,6 +650,21 @@ nav a {
     grid-template-columns: 1fr;
   }
 
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .project-index {
+    padding-top: 0;
+    font-size: 24px;
+  }
+
+  .project-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .education-grid {
     grid-template-columns: 1fr;
   }
@@ -519,6 +679,50 @@ nav a {
 }
 
 @media (max-width: 640px) {
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-head h3 {
+    font-size: 24px;
+  }
+
+  .project-subtitle {
+    font-size: 16px;
+  }
+
+  .project-date {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .project-points {
+    margin-left: 18px;
+    gap: 7px;
+  }
+
+  .project-points li {
+    font-size: 15px;
+  }
+
+  .project-tags li {
+    font-size: 12px;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-actions {
+    justify-content: flex-start;
+  }
+
+  .project-btn {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
   .skill-card {
     padding: 18px;
   }
