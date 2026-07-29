@@ -84,6 +84,169 @@ nav a {
 
 
 /* ==========================================================================
+  HOME SECTION
+========================================================================== */
+
+#home {
+  width: min(1320px, 96%);
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.home-hero {
+  border-radius: 26px;
+  padding: 20px 26px 26px;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-poster {
+  margin-top: 10px;
+  min-height: 520px;
+  position: relative;
+  isolation: isolate;
+  --home-frame-left:  50px;
+  --home-frame-top: 70px;
+}
+
+.home-block-right {
+  right: 0;
+  top: 0;
+  width: 48%;
+  height: 390px;
+  background: transparent;
+}
+
+.home-bottom {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+
+/* Photo */
+.home-photo {
+  position: absolute;
+  left: var(--home-frame-left);
+  top: var(--home-frame-top);
+  width: 500px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+
+/* Text stack */
+.home-outline-stack {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  z-index: 0;
+  display: grid;
+  gap: 2px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(56px, 10vw, 164px);
+  line-height: 0.8;
+}
+
+.home-outline-stack span {
+  position: relative;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.home-outline-front {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  z-index: 6;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(56px, 10vw, 164px);
+  line-height: 0.8;
+  color: #ffffff;
+}
+
+
+/* Stars */
+.home-star {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  clip-path: polygon(50% 0%, 64% 36%, 100% 50%, 64% 64%, 50% 100%, 36% 64%, 0% 50%, 36% 36%);
+  z-index: 5;
+}
+
+.home-star-a {
+  left: 35px;
+  top: 100px;
+}
+
+.home-star-b {
+  left: 22px;
+  top: 150px;
+  width: 35px;
+  height: 35px;
+}
+
+.home-star-c {
+  left: 530px;
+  top: 500px;
+  width: 35px;
+  height: 35px;
+}
+
+/* Intro */
+.home-intro {
+  font-size: clamp(16px, 1.25vw, 22px);
+  line-height: 1.35;
+}
+
+
+/* Socials */
+
+.home-socials-shell {
+  background: #ff85a9;
+  width: 300px;
+  height: 120px;
+  left: 760px;
+  top: 210px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.home-socials {
+  left: 40px;
+  position: relative;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: clamp(14px, 1vw, 20px);
+  justify-items: start;
+}
+
+.home-socials span {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.home-socials a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+
+/* ==========================================================================
   SKILLS SECTION
 ========================================================================== */
 
@@ -646,6 +809,36 @@ nav a {
 ========================================================================== */
 
 @media (max-width: 940px) {
+  #home {
+    padding-top: 12px;
+  }
+
+  .home-hero {
+    padding: 18px;
+  }
+
+  .home-poster {
+    min-height: 420px;
+  }
+
+  .home-block-left {
+    width: min(300px, 52%);
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-photo {
+    width: min(300px, 52%);
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+
+  .home-bottom {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -679,6 +872,32 @@ nav a {
 }
 
 @media (max-width: 640px) {
+
+
+  .home-poster {
+    min-height: 320px;
+  }
+
+  .home-photo {
+    width: min(225px, 66%);
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-outline-stack {
+    right: 0;
+    font-size: clamp(44px, 18vw, 86px);
+  }
+
+
+  .home-intro {
+    font-size: 14px;
+  }
+
+  .home-socials {
+    font-size: 13px;
+  }
+
   .project-card {
     padding: 18px;
   }
