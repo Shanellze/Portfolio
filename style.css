@@ -146,7 +146,6 @@ nav .nav-cta:hover {
 #home {
   width: min(1320px, 96%);
   margin: 0 auto;
-  min-height: 100vh;
   padding-top: 20px;
   color: #ffffff;
 }
@@ -207,7 +206,7 @@ nav .nav-cta:hover {
   display: grid;
   gap: 2px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(56px, 10vw, 164px);
+  font-size: 140px;
   line-height: 0.8;
 }
 
@@ -225,7 +224,7 @@ nav .nav-cta:hover {
   top: 6px;
   z-index: 6;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(56px, 10vw, 164px);
+  font-size: 140px;
   line-height: 0.8;
   color: #ffffff;
 }
@@ -262,7 +261,7 @@ nav .nav-cta:hover {
 
 /* Intro */
 .home-intro {
-  font-size: clamp(16px, 1.25vw, 22px);
+  font-size: 18px;
   line-height: 1.35;
 }
 
@@ -288,7 +287,7 @@ nav .nav-cta:hover {
   list-style: none;
   display: grid;
   gap: 8px;
-  font-size: clamp(14px, 1vw, 20px);
+  font-size: 14px;
   justify-items: start;
 }
 
@@ -437,7 +436,7 @@ nav .nav-cta:hover {
 
 .project-head h3 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(24px, 21px + 0.5vw, 32px);
+  font-size: 28px;
   line-height: 1.15;
 }
 
@@ -702,7 +701,7 @@ nav .nav-cta:hover {
 
 .info-value {
   color: #ffffff;
-  font-size: clamp(15px, 14px + 0.45vw, 23px);
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
   word-break: break-word;
@@ -993,7 +992,7 @@ nav .nav-cta:hover {
 
   .home-outline-stack {
     right: 0;
-    font-size: clamp(44px, 18vw, 86px);
+    font-size: 80px;
   }
 
 
