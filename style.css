@@ -29,9 +29,11 @@ body {
   line-height: 1.6;
   color: #ffffff;
   background-color: #ff85a9;
+  padding-top: 108px;
 }
 
 header {
+  width: 100%;
   color: #fff;
   padding: 16px 0;
   text-align: center;
@@ -69,10 +71,14 @@ a:hover {
 ========================================================================== */
 
 header {
-  width: min(1320px, 96%);
-  margin: 18px auto 0;
+  margin: 0;
   padding: 16px 20px;
-  border-radius: 999px;
+  background: #ff85a9;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -859,6 +865,10 @@ nav .nav-cta:hover {
 ========================================================================== */
 
 @media (max-width: 940px) {
+  body {
+    padding-top: 178px;
+  }
+
   header {
     border-radius: 26px;
     padding: 16px;
@@ -886,7 +896,7 @@ nav .nav-cta:hover {
   }
 
   header {
-    margin-top: 12px;
+    top: 0;
     padding: 14px 12px;
   }
 
@@ -967,7 +977,9 @@ nav .nav-cta:hover {
 }
 
 @media (max-width: 640px) {
-
+  body {
+    padding-top: 208px;
+  }
 
   .home-poster {
     min-height: 320px;
