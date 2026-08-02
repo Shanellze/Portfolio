@@ -29,7 +29,6 @@ body {
   line-height: 1.6;
   color: #ffffff;
   background-color: #ff85a9;
-  padding-top: 108px;
 }
 
 header {
@@ -42,6 +41,7 @@ section {
   width: 100%;
   min-height: 100vh;
   padding: 32px 16px;
+  scroll-margin-top: 48px;
 }
 
 footer {
@@ -74,10 +74,8 @@ header {
   margin: 0;
   padding: 16px 20px;
   background: #ff85a9;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -145,14 +143,14 @@ nav .nav-cta:hover {
 
 #home {
   width: min(1320px, 96%);
-  margin: 0 auto;
-  padding-top: 20px;
+  margin: -40px auto;
+  padding-top: 40px;
   color: #ffffff;
 }
 
 .home-hero {
   border-radius: 26px;
-  padding: 20px 26px 26px;
+  padding: 40px 26px 26px;
   overflow: hidden;
   position: relative;
 }
@@ -864,8 +862,8 @@ nav .nav-cta:hover {
 ========================================================================== */
 
 @media (max-width: 940px) {
-  body {
-    padding-top: 178px;
+  section {
+    scroll-margin-top: 168px;
   }
 
   header {
@@ -911,10 +909,6 @@ nav .nav-cta:hover {
 
   nav .nav-cta {
     padding: 10px 14px;
-  }
-
-  #home {
-    padding-top: 12px;
   }
 
   .home-hero {
@@ -976,8 +970,8 @@ nav .nav-cta:hover {
 }
 
 @media (max-width: 640px) {
-  body {
-    padding-top: 208px;
+  section {
+    scroll-margin-top: 198px;
   }
 
   .home-poster {
