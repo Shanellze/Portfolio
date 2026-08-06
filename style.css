@@ -68,10 +68,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 
 /* ==========================================================================
   NAVIGATION
@@ -80,16 +76,16 @@ a:hover {
 header {
   margin: 0;
   padding: 16px 20px;
-  background: linear-gradient(120deg, #8b3140 0%, #702632 55%, #541b25 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(120deg, rgba(139, 49, 64, 0.72) 0%, rgba(112, 38, 50, 0.7) 55%, rgba(84, 27, 37, 0.72) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 22px;
   text-align: left;
 }
@@ -97,6 +93,7 @@ header {
 .Logo {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 12px;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 32px;
@@ -105,16 +102,21 @@ header {
 }
 
 
-
+nav {
+  justify-self: center;
+}
 
 nav ul {
+  position: relative;
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 16px;
   padding: 0;
   margin: 0;
+  padding-bottom: 8px;
+  color: #cbcbcb;
 }
 
 nav a {
@@ -127,21 +129,43 @@ nav a {
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  opacity: 0;
+  transition: left 0.28s ease, width 0.28s ease, opacity 0.2s ease;
+}
+
 nav a:hover {
+  color: #ffffff;
   text-decoration: none;
   transform: translateY(-1px);
 }
 
-nav .nav-cta {
+nav a[aria-current="page"] {
+  color: #ffffff;
+}
+
+.header-cta {
+  justify-self: end;
+  display: inline-block;
   margin-left: 10px;
   padding: 12px 20px;
   border-radius: 999px;
   background: #fffffa;
   color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
 }
 
-nav .nav-cta:hover {
-  color: #ffffff;
+.header-cta:hover {
   text-decoration: none;
   filter: brightness(1.07);
 }
@@ -949,6 +973,7 @@ nav .nav-cta:hover {
   }
 
   header {
+    display: flex;
     border-radius: 26px;
     padding: 16px;
     flex-wrap: wrap;
@@ -970,8 +995,9 @@ nav .nav-cta:hover {
     gap: 8px;
   }
 
-  nav .nav-cta {
+  .header-cta {
     margin-left: 0;
+    justify-self: center;
   }
 
   header {
@@ -989,7 +1015,7 @@ nav .nav-cta:hover {
     padding: 8px 10px;
   }
 
-  nav .nav-cta {
+  .header-cta {
     padding: 10px 14px;
   }
 

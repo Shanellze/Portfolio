@@ -20,9 +20,10 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a class="nav-cta" href="#contact">Get in touch!</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <a class="header-cta" href="#contact">Get in touch!</a>
     </header>
 
     <main>
@@ -611,6 +612,58 @@
     <footer>
         <p>&copy; 2026 Shanell. All rights reserved.</p>
     </footer>
+
+    <script>
+        const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+        const navList = document.querySelector('nav ul');
+        const navIndicator = document.createElement('span');
+        navIndicator.className = 'nav-indicator';
+        navList?.appendChild(navIndicator);
+        const sections = navLinks
+            .map((link) => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const moveNavIndicator = (activeLink) => {
+            if (!navList || !navIndicator || !activeLink) {
+                return;
+            }
+
+            const listRect = navList.getBoundingClientRect();
+            const linkRect = activeLink.getBoundingClientRect();
+            const horizontalInset = 14;
+
+            navIndicator.style.left = `${linkRect.left - listRect.left + horizontalInset}px`;
+            navIndicator.style.width = `${Math.max(0, linkRect.width - horizontalInset * 2)}px`;
+            navIndicator.style.opacity = '1';
+        };
+
+        const setActiveNav = () => {
+            const offsetY = window.scrollY + 140;
+            let activeId = sections[0]?.id;
+
+            sections.forEach((section) => {
+                if (offsetY >= section.offsetTop) {
+                    activeId = section.id;
+                }
+            });
+
+            navLinks.forEach((link) => {
+                const isActive = link.getAttribute('href') === `#${activeId}`;
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+
+            const activeLink = navLinks.find((link) => link.getAttribute('aria-current') === 'page');
+            moveNavIndicator(activeLink);
+        };
+
+        window.addEventListener('scroll', setActiveNav, { passive: true });
+        window.addEventListener('resize', setActiveNav);
+        window.addEventListener('DOMContentLoaded', setActiveNav);
+    </script>
 
 </body>
 
