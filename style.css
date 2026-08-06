@@ -73,7 +73,10 @@ a:hover {
 header {
   margin: 0;
   padding: 16px 20px;
-  background: linear-gradient(120deg, #ff9fc2 0%, #ff7fad 52%, #ff5f98 100%);
+  background: linear-gradient(120deg, rgba(255, 159, 194, 0.74) 0%, rgba(255, 127, 173, 0.72) 52%, rgba(255, 95, 152, 0.7) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
   position: sticky;
   top: 0;
   z-index: 1000;
