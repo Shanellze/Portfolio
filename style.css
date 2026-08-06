@@ -28,7 +28,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #ffffff;
-  background-color: #ff85a9;
+  background-color: #912F40;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
@@ -80,7 +80,7 @@ a:hover {
 header {
   margin: 0;
   padding: 16px 20px;
-  background: linear-gradient(120deg, rgba(255, 159, 194, 0.74) 0%, rgba(255, 127, 173, 0.72) 52%, rgba(255, 95, 152, 0.7) 100%);
+  background: linear-gradient(120deg, #8b3140 0%, #702632 55%, #541b25 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
@@ -136,7 +136,7 @@ nav .nav-cta {
   margin-left: 10px;
   padding: 12px 20px;
   border-radius: 999px;
-  background: #ffde82;
+  background: #fffffa;
   color: #000000;
 }
 
@@ -277,7 +277,7 @@ nav .nav-cta:hover {
 /* Socials */
 
 .home-socials-shell {
-  background: #ff85a9;
+  background: #40434E;
   width: 300px;
   height: 120px;
   left: 760px;
@@ -318,6 +318,7 @@ nav .nav-cta:hover {
   min-height: auto;
   margin: 0 auto;
   padding: 40px 24px 72px;
+  background: #702632;
 }
 
 .about-shell {
@@ -325,7 +326,7 @@ nav .nav-cta:hover {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: 34px;
   align-items: center;
-  color: #22170f;
+  color: #080705;
   border-radius: 32px;
   padding: 54px 48px;
   overflow: hidden;
@@ -338,7 +339,7 @@ nav .nav-cta:hover {
 .about-shell h2 {
   font-size: 104px;
   line-height: 0.92;
-  color: #22170f;
+  color: #080705;
 }
 
 .about-text {
@@ -347,7 +348,7 @@ nav .nav-cta:hover {
   font-size: 18px;
   line-height: 1.45;
   text-align: justify;
-  color: rgba(34, 23, 15, 0.82);
+  color: #080705;
 }
 
 .about-text + .about-text {
